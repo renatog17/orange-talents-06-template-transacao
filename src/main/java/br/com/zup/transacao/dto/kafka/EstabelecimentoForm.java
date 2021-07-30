@@ -1,19 +1,19 @@
 package br.com.zup.transacao.dto.kafka;
 
-public class Estabelecimento {
+public class EstabelecimentoForm {
 
 	private String nome;
 	private String cidade;
 	private String endereco;
 
-	public Estabelecimento(String nome, String cidade, String endereco) {
+	public EstabelecimentoForm(String nome, String cidade, String endereco) {
 		super();
 		this.nome = nome;
 		this.cidade = cidade;
 		this.endereco = endereco;
 	}
 
-	public Estabelecimento() {
+	public EstabelecimentoForm() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

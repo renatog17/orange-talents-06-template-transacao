@@ -1,17 +1,17 @@
 package br.com.zup.transacao.dto.kafka;
 
-public class Cartao {
+public class CartaoForm {
 
 	private String id;
 	private String email;
 
-	public Cartao(String id, String email) {
+	public CartaoForm(String id, String email) {
 		super();
 		this.id = id;
 		this.email = email;
 	}
 
-	public Cartao() {
+	public CartaoForm() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

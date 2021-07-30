@@ -2,16 +2,17 @@ package br.com.zup.transacao.dto.kafka;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-public class EventoDeTransacao {
+public class EventoDeTransacaoForm {
 
 	private String id;
 	private BigDecimal valor;
-	private Estabelecimento estabelecimento;
-	private Cartao cartao;
-	private LocalDate efetivadaEm;
+	private EstabelecimentoForm estabelecimento;
+	private CartaoForm cartao;
+	private LocalDateTime efetivadaEm;
 	
-	public EventoDeTransacao() {
+	public EventoDeTransacaoForm() {
 		super();
 	}
 
@@ -23,15 +24,15 @@ public class EventoDeTransacao {
 		return valor;
 	}
 
-	public Estabelecimento getEstabelecimento() {
+	public EstabelecimentoForm getEstabelecimento() {
 		return estabelecimento;
 	}
 
-	public Cartao getCartao() {
+	public CartaoForm getCartao() {
 		return cartao;
 	}
 
-	public LocalDate getEfetivadaEm() {
+	public LocalDateTime getEfetivadaEm() {
 		return efetivadaEm;
 	}
 	

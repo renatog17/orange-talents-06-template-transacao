@@ -14,7 +14,7 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
-import br.com.zup.transacao.dto.kafka.EventoDeTransacao;
+import br.com.zup.transacao.dto.kafka.EventoDeTransacaoForm;
 
 @EnableKafka
 @Configuration
@@ -38,16 +38,16 @@ public class KafkaConfiguration {
     }
     
     @Bean
-    public ConsumerFactory<String, EventoDeTransacao> transactionConsumerFactory() {
+    public ConsumerFactory<String, EventoDeTransacaoForm> transactionConsumerFactory() {
         StringDeserializer stringDeserializer = new StringDeserializer();
-        JsonDeserializer<EventoDeTransacao> jsonDeserializer = new JsonDeserializer<>(EventoDeTransacao.class, false);
+        JsonDeserializer<EventoDeTransacaoForm> jsonDeserializer = new JsonDeserializer<>(EventoDeTransacaoForm.class, false);
 
         return new DefaultKafkaConsumerFactory<>(consumerConfigurations(), stringDeserializer, jsonDeserializer);
     }
     
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, EventoDeTransacao> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, EventoDeTransacao> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    public ConcurrentKafkaListenerContainerFactory<String, EventoDeTransacaoForm> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, EventoDeTransacaoForm> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(transactionConsumerFactory());
 
         return factory;
